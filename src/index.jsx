@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter, Switch, Route,
-} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Home from './pages/Home';
 import Cabecario from './organisms/Cabecario';
