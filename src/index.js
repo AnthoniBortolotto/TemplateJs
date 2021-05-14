@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Lazy, Suspense } from "react-router-dom";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
-import Home from "./pages/Home";
-import Cabecario from "./organisms/Cabecario";
-import About from "./pages/About";
-import Buy from "./pages/Buy";
+import Home from "./pages/Home.jsx";
+import Cabecario from "./organisms/Cabecario.jsx";
+import About from "./pages/About.jsx";
+import Buy from "./pages/Buy.jsx";
 import "./atoms/css/animate.min.css";
 export const theme = createMuiTheme({
   palette: {
