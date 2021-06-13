@@ -1,34 +1,34 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.jsx'),
+  entry: path.resolve(__dirname, "./src/index.jsx"),
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js',
-    chunkFilename: '[id].js',
-    publicPath: '/',
+    path: path.resolve(__dirname, "./dist"),
+    filename: "bundle.js",
+    chunkFilename: "[id].js",
+    publicPath: "/",
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
   module: {
     rules: [
       {
         test: /\.(js)x?$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: ["babel-loader", "eslint-loader"],
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          { loader: 'style-loader' },
+          { loader: "style-loader" },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
               modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]',
+                localIdentName: "[name]__[local]___[hash:base64:5]",
               },
               sourceMap: true,
             },
@@ -37,20 +37,21 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/,
-        loader: 'url-loader?limit=10000&name=img/[name].[ext]',
+        loader: "file-loader",
+        options: {},
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, './src/templates/index.html'),
-      filename: 'index.html',
-      inject: 'body',
+      template: path.resolve(__dirname, "./src/templates/index.html"),
+      filename: "index.html",
+      inject: "body",
     }),
   ],
   devServer: {
     port: 8080,
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: path.resolve(__dirname, "./dist"),
     compress: true,
     historyApiFallback: true,
   },

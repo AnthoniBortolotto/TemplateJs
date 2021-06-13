@@ -1,11 +1,11 @@
-import { createStyles, withStyles } from '@material-ui/core';
-import React, { Component } from 'react';
+import { createStyles, withStyles } from "@material-ui/core";
+import React, { Component } from "react";
 
 const styles = () =>
   createStyles({
     linksBtnsCabecarioStyle: {
-      '&:hover': {
-        textDecoration: 'none',
+      "&:hover": {
+        textDecoration: "none",
       },
     },
   });
@@ -13,7 +13,7 @@ const styles = () =>
 class Home extends Component {
   constructor() {
     super();
-    this.state = { dia: 'Bom dia' };
+    this.state = { dia: "Bom dia" };
   }
 
   render() {
